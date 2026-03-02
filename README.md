@@ -1,0 +1,27 @@
+Briefly summarize your client, Artemis Financial, and its software requirements. Who was the client? What issue did the company want you to address?
+
+Artemis Financial was a financial services company responsible for managing sensitive customer data through a web based application. The company needed assistance identifying and correcting software security weaknesses that placed data integrity and communication security at risk. The primary issue was that the application lacked secure transmission protocols and proper mechanisms to verify that transferred data had not been altered. My role was to refactor the application to support secure communications using HTTPS and implement checksum verification to ensure data integrity while maintaining application functionality.
+
+What did you do well when you found your client’s software security vulnerabilities? Why is it important to code securely? What value does software security add to a company’s overall well-being?
+
+One thing I did well during the vulnerability assessment was taking a structured approach rather than focusing only on obvious coding issues. I evaluated transport security, dependency risks, and cryptographic implementation together to understand the full security posture of the application. Coding securely is important because vulnerabilities can expose sensitive information, disrupt services, and damage customer trust. Strong software security adds value to an organization by protecting data, reducing operational risk, preventing financial loss, and maintaining customer confidence, which is especially important for companies operating in financial industries.
+
+Which part of the vulnerability assessment was challenging or helpful to you?
+
+The most challenging and ultimately helpful part of the vulnerability assessment was analyzing the OWASP Dependency Check results. Many vulnerabilities originated from third party or transitive dependencies rather than code written directly in the project. Learning how to interpret those findings and determine which risks were actionable versus environmental helped me better understand how modern applications inherit risk through frameworks and libraries. This experience reinforced that secure development includes dependency management and ongoing maintenance, not just secure programming practices.
+
+How did you increase layers of security? In the future, what would you use to assess vulnerabilities and decide which mitigation techniques to use?
+
+I increased layers of security by enabling HTTPS with TLS encryption to protect data in transit and implementing SHA 256 checksum validation to verify data integrity. I also relied on platform provided cryptographic libraries instead of creating custom security logic and performed automated dependency scanning to identify known vulnerabilities. In future projects, I would continue using vulnerability scanning tools such as OWASP Dependency Check, static analysis tools, secure code reviews, and risk based threat assessments to determine appropriate mitigation techniques based on severity, exposure, and business impact.
+
+How did you make certain the code and software application were functional and secure? After refactoring the code, how did you check to see whether you introduced new vulnerabilities?
+
+After refactoring the application, I verified functionality by successfully running the application over HTTPS and confirming that all endpoints executed correctly without runtime errors. I validated that encrypted communication was working as expected and that checksum outputs were generated consistently. To ensure new vulnerabilities were not introduced, I performed secondary testing using dependency scanning tools to analyze project libraries and confirm that the refactoring process did not expand the attack surface or introduce insecure dependencies.
+
+What resources, tools, or coding practices did you use that might be helpful in future assignments or tasks?
+
+This project reinforced the value of using established security tools and industry standard practices. I used Spring Boot secure configuration techniques, TLS certificate generation, Java’s MessageDigest library for cryptographic hashing, and OWASP Dependency Check for vulnerability analysis. Separating security logic into dedicated utility classes and relying on trusted platform libraries instead of custom implementations were important practices that will continue to be useful in future development and security focused assignments.
+
+Employers sometimes ask for examples of work that you have successfully completed to show your skills, knowledge, and experience. What might you show future employers from this assignment?
+
+From this assignment, I would show employers my completed vulnerability assessment and secure software refactoring work to demonstrate my ability to identify risks, implement encrypted communications, and apply secure coding principles in a realistic financial application. I would also highlight my implementation of checksum verification using SHA 256 and discuss how, while SHA 256 was an appropriate balance of performance and security for integrity validation, I recognize that stronger or more specialized algorithms could be justified depending on system requirements. This project demonstrates practical experience improving application security while maintaining functionality, which reflects skills directly applicable to real world software development environments.
